@@ -1,18 +1,11 @@
 import { IGumballMachineState } from "./Istate";
 import { GumballMachine } from "./GumballMachine";
-// import { SoldOutState } from "./SoldOutState";
 import { SoldState } from "./SoldState";
-// import { NoQuarterState } from "./NoQuarterState";
-
 export class HasQuarterState implements IGumballMachineState {
   gumballMachine: GumballMachine;
-  // noQuarterState:IGumballMachineState;
-  // soldOutState:IGumballMachineState;
 
   constructor(gumballMachine: GumballMachine) {
     this.gumballMachine = gumballMachine;
-    // this.noQuarterState = new NoQuarterState(gumballMachine);
-    // this.soldOutState = new SoldOutState(gumballMachine);
     console.log("inicializando módulo estado hasQuarter");
   }
 
@@ -28,7 +21,6 @@ export class HasQuarterState implements IGumballMachineState {
     let outPut = "[HasQuarterState]You turned...\n";
     if (this.gumballMachine.Count > 1) {
       outPut = outPut + "go outing..";
-      // this.gumballMachine.State = new SoldOutState(this.gumballMachine);
     } else {
       outPut = outPut + "no has gumball..";
     }
